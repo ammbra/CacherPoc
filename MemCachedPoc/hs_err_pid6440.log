@@ -1,0 +1,122 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+# java.lang.OutOfMemoryError: requested 64704 bytes for Chunk::new. Out of swap space?
+#
+#  Internal Error (allocation.cpp:272), pid=6440, tid=8260
+#  Error: Chunk::new
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (19.1-b02 mixed mode windows-amd64 compressed oops)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000067c4000):  JavaThread "CompilerThread1" daemon [_thread_in_native, id=8260, stack(0x00000000069c0000,0x0000000006ac0000)]
+
+Stack: [0x00000000069c0000,0x0000000006ac0000]
+
+Current CompileTask:
+C2:101  !   org.apache.maven.model.interpolation.StringSearchModelInterpolator$InterpolateObjectAction.traverseObjectWithParents(Ljava/lang/Class;Ljava/lang/Object;)V (118 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000067d6800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=11084, stack(0x0000000006ac0000,0x0000000006bc0000)]
+=>0x00000000067c4000 JavaThread "CompilerThread1" daemon [_thread_in_native, id=8260, stack(0x00000000069c0000,0x0000000006ac0000)]
+  0x00000000020eb800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=11912, stack(0x00000000066c0000,0x00000000067c0000)]
+  0x00000000020ea000 JavaThread "Attach Listener" daemon [_thread_blocked, id=11056, stack(0x00000000065c0000,0x00000000066c0000)]
+  0x00000000020e7000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=11528, stack(0x00000000064c0000,0x00000000065c0000)]
+  0x00000000020b6000 JavaThread "Finalizer" daemon [_thread_blocked, id=9492, stack(0x00000000063c0000,0x00000000064c0000)]
+  0x00000000020ad000 JavaThread "Reference Handler" daemon [_thread_blocked, id=6748, stack(0x00000000062c0000,0x00000000063c0000)]
+  0x00000000004ed000 JavaThread "main" [_thread_in_Java, id=8960, stack(0x0000000001ef0000,0x0000000001ff0000)]
+
+Other Threads:
+  0x00000000020a6800 VMThread [stack: 0x00000000061c0000,0x00000000062c0000] [id=1064]
+  0x00000000067e0000 WatcherThread [stack: 0x0000000006bc0000,0x0000000006cc0000] [id=11804]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37632K, used 23293K [0x00000007d6000000, 0x00000007d89f0000, 0x0000000800000000)
+  eden space 32320K, 68% used [0x00000007d6000000,0x00000007d7597748,0x00000007d7f90000)
+  from space 5312K, 22% used [0x00000007d7f90000,0x00000007d80b8020,0x00000007d84c0000)
+  to   space 5312K, 0% used [0x00000007d84c0000,0x00000007d84c0000,0x00000007d89f0000)
+ PSOldGen        total 86016K, used 0K [0x0000000782000000, 0x0000000787400000, 0x00000007d6000000)
+  object space 86016K, 0% used [0x0000000782000000,0x0000000782000000,0x0000000787400000)
+ PSPermGen       total 21248K, used 14065K [0x000000077ce00000, 0x000000077e2c0000, 0x0000000782000000)
+  object space 21248K, 66% used [0x000000077ce00000,0x000000077dbbc7e0,0x000000077e2c0000)
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	C:\Program Files\Java\jdk1.6.0_24\bin\java.exe
+0x00007ffab3980000 - 0x00007ffab3b26000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffab3640000 - 0x00007ffab377a000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffab0dc0000 - 0x00007ffab0ecf000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffaaf900000 - 0x00007ffaaf988000 	C:\WINDOWS\system32\apphelp.dll
+0x00007ffa954b0000 - 0x00007ffa954ff000 	C:\WINDOWS\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffab14c0000 - 0x00007ffab1567000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffab0b30000 - 0x00007ffab0b5b000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x00007ffab1610000 - 0x00007ffab1661000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x00007ffab2eb0000 - 0x00007ffab3021000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffab1340000 - 0x00007ffab14b8000 	C:\WINDOWS\system32\ole32.dll
+0x00007ffab1670000 - 0x00007ffab2a7f000 	C:\WINDOWS\system32\SHELL32.dll
+0x00007ffab0300000 - 0x00007ffab031e000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ffab33d0000 - 0x00007ffab3475000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffaa9b20000 - 0x00007ffaa9b3b000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x00007ffab3090000 - 0x00007ffab31c7000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffab3490000 - 0x00007ffab34e7000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x00007ffab3780000 - 0x00007ffab3956000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x00007ffab34f0000 - 0x00007ffab3634000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffab0cf0000 - 0x00007ffab0d04000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffaaf2f0000 - 0x00007ffaaf38f000 	C:\WINDOWS\SYSTEM32\SHCORE.dll
+0x00007ffab2c70000 - 0x00007ffab2ca4000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ffab2d60000 - 0x00007ffab2e99000 	C:\WINDOWS\system32\MSCTF.dll
+0x000000006d890000 - 0x000000006df94000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\server\jvm.dll
+0x00007ffaacb30000 - 0x00007ffaacb4f000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffaac5d0000 - 0x00007ffaac5fa000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffab0fd0000 - 0x00007ffab101a000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x00007ffaafb50000 - 0x00007ffaafb76000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x000000006d800000 - 0x000000006d80e000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\java.dll
+0x000000006d3b0000 - 0x000000006d3ba000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\hpi.dll
+0x00007ffab3480000 - 0x00007ffab3487000 	C:\WINDOWS\system32\PSAPI.DLL
+0x000000006d850000 - 0x000000006d862000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\zip.dll
+0x000000006d6a0000 - 0x000000006d6b7000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\net.dll
+0x00007ffab3030000 - 0x00007ffab3088000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ffab2a80000 - 0x00007ffab2a89000 	C:\WINDOWS\system32\NSI.dll
+0x00007ffab0550000 - 0x00007ffab05a8000 	C:\WINDOWS\system32\mswsock.dll
+0x000000006d6c0000 - 0x000000006d6cb000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=C:\Program Files\NetBeans 7.4\java\maven\bin\m2.conf -Dmaven.home=C:\Program Files\NetBeans 7.4\java\maven 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar clean
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_24
+PATH=C:\Oracle\Middleware\Oracle_FRHome1\bin;F:\DevSuiteHome_3\jdk\jre\bin\classic;F:\DevSuiteHome_3\jdk\jre\bin;F:\DevSuiteHome_3\jdk\jre\bin\client;F:\DevSuiteHome_3\jlib;F:\DevSuiteHome_3\bin;F:\DevSuiteHome_3\jre\1.4.2\bin\client;F:\DevSuiteHome_3\jre\1.4.2\bin;F:\app\Ana\product\11.2.0\dbhome_1\bin;F:\app\Ana\product\12.1.0\dbhome_2\bin;F:\app\Ana\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Live\Shared;C:\Oracle\Middleware\Oracle_FRHome1\opmn\bin;C:\Oracle\Middleware\Oracle_FRHome1\opmn\lib;C:\Oracle\Middleware\Oracle_FRHome1\perl\bin
+USERNAME=Ana
+LD_LIBRARY_PATH=C:\Oracle\Middleware\Oracle_FRHome1\lib
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.2 Build 9200 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8251908k(334264k free), swap 16443908k(5260k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (19.1-b02) for windows-amd64 JRE (1.6.0_24-b07), built on Feb  2 2011 16:25:45 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Sun Nov 23 00:49:02 2014
+elapsed time: 2 seconds
+

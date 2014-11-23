@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    caching configuration
+-->
+<ehcache>
+     
+    <diskStore path="F:\\cache" />
+     
+    <defaultCache eternal="true" maxElementsInMemory="1000"
+                   overflowToDisk="true" diskPersistent="true" timeToIdleSeconds="0"
+                   timeToLiveSeconds="0" memoryStoreEvictionPolicy="LRU" statistics="true" />
+</ehcache>
