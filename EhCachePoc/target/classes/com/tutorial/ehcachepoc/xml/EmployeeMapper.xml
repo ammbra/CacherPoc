@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tutorial.ehcachepoc.mapper.EmployeeMapper" >
+   
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+     
+    <resultMap id="results" type="com.tutorial.ehcachepoc.bean.Employee" >
+        <id column="id" property="id" javaType="integer" jdbcType="BIGINT" />
+        <result column="first_name" property="firstName" javaType="string" jdbcType="VARCHAR"/>
+        <result column="last_name" property="lastName" javaType="string" jdbcType="VARCHAR"/>
+        <result column="hiring_date" property="hiringDate" javaType="date" jdbcType="DATE" />
+        <result column="sex" property="sex" javaType="string" jdbcType="VARCHAR" />
+        <result column="dept_id" property="deptId" javaType="integer" jdbcType="BIGINT" />
+    </resultMap> 
+ 
+    <select id="retrieveEmployees" resultMap="results"  useCache="true">
+        select id, first_name, last_name, hiring_date, sex, dept_id
+        from employee   
+    </select>  
+</mapper>
