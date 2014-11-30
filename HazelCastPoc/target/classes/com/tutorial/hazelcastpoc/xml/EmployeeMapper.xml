@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.tutorial.hazelcastpoc.dao.EmployeeDao" >
    
-    <cache type="org.mybatis.caches.hazelcast.HazelcastCache"/>
+    <cache type="org.mybatis.caches.hazelcast.LoggingHazelcastCache"/>
 
      
     <resultMap id="results" type="com.tutorial.hazelcastpoc.bean.Employee" >
@@ -15,7 +15,7 @@
         <result column="dept_id" property="deptId" javaType="integer" jdbcType="BIGINT" />
     </resultMap> 
  
-    <select id="retrieveEmployees" resultMap="results">
+    <select id="retrieveEmployees" resultMap="results" useCache="true">
         select id, first_name, last_name, hiring_date, sex, dept_id
         from employee   
     </select>  
