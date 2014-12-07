@@ -131,7 +131,7 @@ public class Employee implements Serializable {
 
     @Override
     public String toString() {
-        return "com.tutorial.crudwithjsp.model.Employee[ id=" + id + " ]";
+        return "com.tutorial.hazelcastpoc.bean.Employee[ id=" + id + " ]";
     }
     
 }
