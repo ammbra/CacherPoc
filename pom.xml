@@ -13,7 +13,13 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <modules>
+        <module>MemCachedPoc</module>
+        <module>OSCachePoc</module>
+        <module>EhCachePoc</module>
+        <module>HazelCastPoc</module>
+    </modules>
+    
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
